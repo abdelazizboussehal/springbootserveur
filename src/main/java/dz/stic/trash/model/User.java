@@ -1,69 +1,52 @@
 package dz.stic.trash.model;
 
-import java.sql.Date;
+import java.util.Date;
+import java.util.Objects;
 
 public abstract class User {
-
-    protected Integer id;
-    protected String lastName;
-    protected String firstName;
-    protected String email;
-    protected String username;
-    protected String password;
+    protected int id;
+    protected String lastname,fisrtName,userName,password;
     protected Date birthDate;
-    protected String phone;
-
-    public User() {
-    }
-
-    public User(String lastName, String firstName, String email, String username, String password, Date birthDate, String phone) {
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.email = email;
-        this.username = username;
+    public User(){};
+    public User(int id, String lastname, String fisrtName, String userName, String password, Date birthDate) {
+        this.id = id;
+        this.lastname = lastname;
+        this.fisrtName = fisrtName;
+        this.userName = userName;
         this.password = password;
         this.birthDate = birthDate;
-        this.phone = phone;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFisrtName() {
+        return fisrtName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFisrtName(String fisrtName) {
+        this.fisrtName = fisrtName;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -82,18 +65,16 @@ public abstract class User {
         this.birthDate = birthDate;
     }
 
-    public String getPhone() {
-        return phone;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id;
     }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
 
     @Override
-    public boolean equals(Object obj) {
-        return obj instanceof User && this.id.equals(((User) obj).getId());
+    public int hashCode() {
+        return Objects.hash(id);
     }
-
 }

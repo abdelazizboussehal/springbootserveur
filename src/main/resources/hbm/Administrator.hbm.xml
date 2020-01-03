@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="dz.stic.trash.model.Administrator" table="administrator">
+        <id name="id" type="integer" column="ID">
+            <generator class="sequence-identity">
+                <param name="sequence">seqAdmin</param>
+            </generator>
+        </id>
+        <property name="email" type="string">
+            <column name="email" />
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" />
+        </property>
+        <property name="fisrtName" type="string">
+            <column name="fisrtName" />
+        </property>
+        <property name="userName" type="string">
+            <column name="userName" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" />
+        </property>
+        <property name="birthDate" type="string">
+            <column name="birthDate" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="dz.stic.trash.model.Photo" table="photo">
+        <id name="id" type="integer" column="ID">
+            <generator class="sequence-identity">
+                <param name="sequence">seqPhoto</param>
+            </generator>
+        </id>
+        <property name="path" type="string">
+            <column name="path" />
+        </property>
+        <property name="createDate" type="date">
+            <column name="createDate" />
+        </property>
+
+    </class>
+</hibernate-mapping>
