@@ -1,19 +1,22 @@
 package dz.stic.trash.doa;
 
-import dz.stic.trash.model.Photo;
+
+import dz.stic.trash.model.Challenge;
+import dz.stic.trash.model.Client;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
 @Repository
-public class PhotoDAO extends BaseDAO<Photo> {
+public class ChallengeDAO extends BaseDAO<Challenge> {
 
     @Autowired
     SessionFactory sessionFactory;
 
 
-    public PhotoDAO() {
-        super(Photo.class, "Photo");
+    public ChallengeDAO() {
+        super(Challenge.class, "Challenge");
     }
 
     public Session openCurrentSession() {

@@ -22,7 +22,7 @@
             <column name="endingDate" />
         </property>
 
-        <component name="address" class="dz.stic.TrashServer.classpersistence.Address" insert="true" update="true" >
+        <component name="address" class="dz.stic.trash.model.Address" insert="true" update="true" >
             <property name="latitude" type="double">
                 <column name="latitude" />
             </property>
@@ -42,25 +42,21 @@
                 <column name="country" />
             </property>
         </component>
-
-        <set name="rPhoto" cascade="all" lazy="false" fetch="join" >
-            <key column="id_challenge"/>
-            <one-to-many class="dz.stic.TrashServer.classpersistence.Photo" />
-        </set>
+<!--
 
         <set name="rComment" cascade="all" >
             <key column="id_challenge"/>
-            <one-to-many class="dz.stic.TrashServer.classpersistence.Comment" />
+            <one-to-many class="dz.stic.trash.model.Comment" />
         </set>
         <set name="rNote" cascade="all" >
             <key column="id_challenge"/>
-            <one-to-many class="dz.stic.TrashServer.classpersistence.Note" />
+            <one-to-many class="dz.stic.trash.model.Note" />
         </set>
         <set name="rrClient" table="participant" cascade="all">
             <key column="id_challenge"/>
-            <many-to-many column="id_user" class="dz.stic.TrashServer.classpersistence.Client" />
+            <many-to-many column="id_user" class="dz.stic.trash.model.Client" />
         </set>
-
+-->
 
     </class>
 </hibernate-mapping>

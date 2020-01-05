@@ -34,7 +34,7 @@
         </property>
         <set name="rChallenge" cascade="all">
             <key column="id_user"/>
-            <one-to-many class="dz.stic.TrashServer.classpersistence.Challenge" />
+            <one-to-many class="dz.stic.trash.model.Challenge" />
         </set>
     </class>
 </hibernate-mapping>

@@ -6,6 +6,10 @@ import java.util.Objects;
 import java.util.Set;
 
 public class Challenge {
+    public Challenge(int id) {
+        this.id = id;
+    }
+
     private Client rClient;
     private Set<Client> rrClient=new HashSet<>();
     private int id,state;

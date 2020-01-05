@@ -1,9 +1,8 @@
 package dz.stic.trash;
 
-import dz.stic.trash.doa.AdminDAO;
-import dz.stic.trash.model.Admin;
+import dz.stic.trash.doa.PhotoDAO;
+import dz.stic.trash.model.Photo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -13,8 +12,6 @@ public class TrashApplication
         // this is just for testing
         /*implements CommandLineRunner */ {
 
-    @Autowired
-    AdminDAO adminDAO;
 
     public static void main(String[] args) {
         SpringApplication.run(TrashApplication.class, args);

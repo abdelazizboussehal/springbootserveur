@@ -73,8 +73,4 @@ public abstract class User {
         return id == user.id;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
 }

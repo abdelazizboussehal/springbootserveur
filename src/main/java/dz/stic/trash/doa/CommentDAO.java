@@ -1,21 +1,22 @@
 package dz.stic.trash.doa;
 
 
-import dz.stic.trash.model.Admin;
+import dz.stic.trash.model.Challenge;
+import dz.stic.trash.model.Comment;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class AdminDAO extends BaseDAO<Admin> {
+public class CommentDAO extends BaseDAO<Comment> {
 
     @Autowired
     SessionFactory sessionFactory;
 
 
-    public AdminDAO() {
-        super(Admin.class, "Admin");
+    public CommentDAO() {
+        super(Comment.class, "Commentt");
     }
 
     public Session openCurrentSession() {

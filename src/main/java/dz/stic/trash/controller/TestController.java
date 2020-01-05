@@ -1,8 +1,6 @@
 package dz.stic.trash.controller;
 
-import dz.stic.trash.doa.AdminDAO;
 import dz.stic.trash.doa.PhotoDAO;
-import dz.stic.trash.model.Admin;
 import dz.stic.trash.model.Photo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,12 +12,11 @@ import java.util.List;
 public class TestController {
 
     @Autowired
-    AdminDAO adminDAO;
-    @Autowired
     PhotoDAO photoDAO;
 
     @GetMapping("/")
     public List<Photo> findAll() {
+
         return photoDAO.findAll();
     }
 
@@ -29,11 +26,12 @@ public class TestController {
         photoDAO.persist(photo);
         return true;
     }
-
     @GetMapping("/{id}")
-    public Admin findAll(@PathVariable Integer id) {
-        return adminDAO.findById(id);
+    public Photo findById(@PathVariable Integer id) {
+        return photoDAO.findById(id);
     }
+
+
 
 
 }
