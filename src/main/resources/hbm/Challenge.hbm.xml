@@ -9,16 +9,16 @@
                 <param name="sequence">seqChallenge</param>
             </generator>
         </id>
-        <property name="createdDate" type="date">
+        <property name="createdDate" type="string">
             <column name="createdDate" />
         </property>
         <property name="state" type="integer">
             <column name="state" />
         </property>
-        <property name="startingDate" type="date">
+        <property name="startingDate" type="string">
             <column name="startingDate" />
         </property>
-        <property name="endingDate" type="date">
+        <property name="endingDate" type="string">
             <column name="endingDate" />
         </property>
 
@@ -42,12 +42,13 @@
                 <column name="country" />
             </property>
         </component>
-<!--
 
-        <set name="rComment" cascade="all" >
+
+        <set name="rComment" cascade="all" lazy="false" fetch="select" >
             <key column="id_challenge"/>
             <one-to-many class="dz.stic.trash.model.Comment" />
         </set>
+        <!--
         <set name="rNote" cascade="all" >
             <key column="id_challenge"/>
             <one-to-many class="dz.stic.trash.model.Note" />

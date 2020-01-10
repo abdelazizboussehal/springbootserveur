@@ -13,7 +13,7 @@ public class Challenge {
     private Client rClient;
     private Set<Client> rrClient=new HashSet<>();
     private int id,state;
-    private Date createdDate,startingDate,endingDate;
+    private String createdDate,startingDate,endingDate;
     private Set<Photo> rPhoto=new HashSet<>();
     private Address address;
     private Set<Note> rNote=new HashSet<>();
@@ -23,14 +23,13 @@ public class Challenge {
         return rrClient;
     }
 
-    public Challenge(int state, Date createdDate, Date startingDate, Date endingDate, Address address) {
-
+    public Challenge(int id, int state, String createdDate, String startingDate, String endingDate, Address address) {
+        this.id = id;
         this.state = state;
         this.createdDate = createdDate;
         this.startingDate = startingDate;
         this.endingDate = endingDate;
         this.address = address;
-
     }
 
     public void setRrClient(Set<Client> rrClient) {
@@ -61,27 +60,27 @@ public class Challenge {
         this.state = state;
     }
 
-    public Date getCreatedDate() {
+    public String getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(Date createdDate) {
+    public void setCreatedDate(String createdDate) {
         this.createdDate = createdDate;
     }
 
-    public Date getStartingDate() {
+    public String getStartingDate() {
         return startingDate;
     }
 
-    public void setStartingDate(Date startingDate) {
+    public void setStartingDate(String startingDate) {
         this.startingDate = startingDate;
     }
 
-    public Date getEndingDate() {
+    public String getEndingDate() {
         return endingDate;
     }
 
-    public void setEndingDate(Date endingDate) {
+    public void setEndingDate(String endingDate) {
         this.endingDate = endingDate;
     }
 
