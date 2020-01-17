@@ -48,6 +48,10 @@
             <key column="id_challenge"/>
             <one-to-many class="dz.stic.trash.model.Comment" />
         </set>
+        <set name="rPhoto" cascade="all"  lazy="false" fetch="select" >
+            <key column="id_challenge"/>
+            <one-to-many class="dz.stic.trash.model.Photo" />
+        </set>
         <!--
         <set name="rNote" cascade="all" >
             <key column="id_challenge"/>

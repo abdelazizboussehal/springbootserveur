@@ -13,6 +13,11 @@ public class Photo {
         this.createDate = createDate;
     }
 
+    public Photo(String path, Date createDate) {
+        this.path = path;
+        this.createDate = createDate;
+    }
+
     public Photo() {
     }
 
