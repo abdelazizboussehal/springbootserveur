@@ -14,8 +14,8 @@
         <property name="fisrtName" type="string">
             <column name="fisrtName" />
         </property>
-        <property name="userName" type="string">
-            <column name="userName" />
+        <property name="userName" type="string" >
+            <column name="userName" unique="true"/>
         </property>
         <property name="password" type="string">
             <column name="password" />
@@ -32,7 +32,7 @@
         <property name="androidVersion" type="string">
             <column name="androidVersion" />
         </property>
-        <set name="rChallenge" cascade="all">
+        <set name="rChallenge" cascade="all" lazy="false" fetch="select">
             <key column="id_user"/>
             <one-to-many class="dz.stic.trash.model.Challenge" />
         </set>

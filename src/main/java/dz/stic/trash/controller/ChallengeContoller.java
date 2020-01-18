@@ -65,6 +65,7 @@ public class ChallengeContoller {
         Challenge challenge=new Challenge(id);
         challengeDAO.delete(challenge);
     }
+
     @RequestMapping("/download/{fileName}")
     public ResponseEntity<InputStreamResource> downloadFile1(
             @PathVariable String fileName) throws IOException {
