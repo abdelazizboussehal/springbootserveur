@@ -15,6 +15,10 @@ public class Note {
         this.noteValue = noteValue;
     }
 
+    public Note(int id) {
+        this.id = id;
+    }
+
     public int getNoteValue() {
         return noteValue;
     }

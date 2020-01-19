@@ -18,6 +18,10 @@ private int isEnabled;
         this.isEnabled = isEnabled;
     }
 
+    public Comment(int id) {
+        this.id = id;
+    }
+
     public int getIsEnabled() {
         return isEnabled;
     }
