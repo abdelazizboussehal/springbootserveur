@@ -4,8 +4,9 @@ import java.util.Objects;
 
 public class Address {
     private int id;
-    private double longitude, latitude;
+    private Double longitude, latitude;
     private String street ,city,zipCode,country;
+
 
     public Address() {
     }

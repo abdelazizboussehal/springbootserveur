@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -30,11 +31,7 @@ public class AdministratorController {
         return administratorDAO.findById(id);
     }
 
-    @GetMapping("/AaallChallenge")
-    public List<Challenge> findAllChallenge() {
 
-        return challengeDAO.findAll();
-    }
     @GetMapping("/AllChallenge")
     /*@ResponseBody*/
     public String viewHomePage(Model model) {
@@ -42,4 +39,41 @@ public class AdministratorController {
         model.addAttribute("listChallenge", listChallenge);
         return "index";
     }
+// Modifier challenge
+    @RequestMapping("/edit/{id}")
+    public ModelAndView showEditForm(@PathVariable(name = "id") int id) {
+        ModelAndView mav = new ModelAndView("edit_form");
+        Challenge challenge = challengeDAO.findById(id);
+        mav.addObject("challenge", challenge);
+        return mav;
+    }
+
+    @RequestMapping(value = "/a", method = RequestMethod.POST)
+    public String challenge(@ModelAttribute("challenge") Challenge challenge) {
+        challenge.setCreatedDate("raoudd");
+        challengeDAO.update(challenge);
+        return "index";
+    }
+
+    // supprimé challenge
+    @RequestMapping("/delete/{id}")
+    public String delete(@PathVariable(name = "id") int id) {
+        Challenge challenge=new Challenge(id);
+        challengeDAO.delete(challenge);
+        return "index";
+    }
+
+    // New Challenge
+    @RequestMapping("/new")
+    public String showNewForm(Model model) {
+        Challenge challenge = new Challenge();
+        model.addAttribute("challenge", challenge);
+        return "Créer_Challenge";
+    }
+    @PostMapping(value = "/" )
+    public String challenge1(@RequestParam("challenge") Challenge challenge) {
+        challengeDAO.persist(challenge);
+        return "redirect:/";
+    }
+
 }
