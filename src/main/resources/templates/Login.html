@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8" />
+<title>Login Page</title>
+
+</head>
+<body>
+<form name="loginForm"  role="form" id="form_id" data-parsley-validate="" novalidate=""
+      th:action="@{/admin/AllChallenge}" method="get"
+
+>
+    <table width="30%"height="50%" bgcolor="0099CC" align="center" >
+
+        <tr>
+            <td colspan=2><center><font size=4> Login Page</b></font></center></td>
+        </tr>
+
+        <tr>
+            <td>Username:</td>
+            <td><input type="text" size=25 name="userid" ></td>
+
+
+        </tr>
+
+        <tr>
+            <td>Password:</td>
+            <td><input type="Password" size=25 name="pwd"></td>
+        </tr>
+
+        <tr>
+            <td><input type="submit" onclick="return check(this.form)" value="Login"></td>
+        </tr>
+
+    </table>
+</form>
+
+
+<script type="text/javascript" th:inline="javascript">
+    $(function(){
+        function get_action(){
+            //Will retrieve it
+            console.log("form action url:" + $("#form_id").attr("action"));
+
+            $("#form_id").attr("action", "@{/changePassword1}"); //Will set it
+        }
+
+
+    function check(form)
+    {var correct=0;
+        var theList = [[${listAdmin}]]
+        for (i = 0; i < theList.length; i++) {
+            if(theList[i]["userName"]==form.userid.value &&  theList[i]["password"]==form.pwd.value)
+                correct=1;
+
+        }
+        if(correct==1)
+            alert("ok login")
+
+        else
+            alert(" not ok login")
+    }
+    });
+
+</script>
+
+
+</body>
+</html>

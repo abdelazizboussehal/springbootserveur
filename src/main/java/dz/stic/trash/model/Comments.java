@@ -6,13 +6,13 @@ import java.util.Objects;
 public class Comments {
 private int id;
 private String content;
-private Date creationDate ;
+private String creationDate ;
 private int isEnabled;
     private Client rClient;
     public Comments() {
     }
 
-    public Comments(String content, Date creationDate, int isEnabled) {
+    public Comments(String content, String creationDate, int isEnabled) {
         this.id = id;
         this.content = content;
         this.creationDate = creationDate;
@@ -54,11 +54,11 @@ private int isEnabled;
         this.content = content;
     }
 
-    public Date getCreationDate() {
+    public String getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(String creationDate) {
         this.creationDate = creationDate;
     }
 

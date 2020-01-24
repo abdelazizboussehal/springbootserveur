@@ -3,38 +3,57 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8"/>
-    <title>Sales Manager Application</title>
+    <title>All Challenges</title>
 </head>
 <body>
 <div align="center">
-    <h1>Sales Records</h1>
-    <a href="/admin/new">Enter New Sale</a>
+    <h1>Challenges List</h1>
+    <a href="/admin/new">Enter New Challenge</a>
     <br/><br/>
     <table border="1" cellpadding="10">
         <thead>
         <tr>
             <th>ID</th>
+            <th>State</th>
             <th>Creation Date</th>
             <th>Starting Date</th>
             <th>Ending Date</th>
             <th>Street</th>
             <th>City</th>
             <th>Country</th>
+            <th>SetState</th>
+            <th>Update Challenge</th>
+            <th>Delete Challenge</th>
 
         </tr>
         </thead>
         <tbody>
         <tr th:each="listChallenge : ${listChallenge}">
             <td th:text="${listChallenge.id}">ID</td>
+            <td th:text="${listChallenge.state}">State</td>
             <td th:text="${listChallenge.createdDate}">Creation Date</td>
             <td th:text="${listChallenge.startingDate}">Starting Date</td>
             <td th:text="${listChallenge.endingDate}">Ending Date</td>
             <td th:text="${listChallenge.address.getStreet()}">Street</td>
             <td th:text="${listChallenge.address.getCity()}">City</td>
             <td th:text="${listChallenge.address.getCountry()}">Country</td>
+            <td th:text="${listChallenge.rComments.iterator().next().getId()}">Country</td>
+           <td><a th:href="@{'/admin/SetState/' + ${listChallenge.id}}">
+               <input type="button" value="Activé/Désactivé"    /></a>
+           </td>
             <td>
-                <a th:href="@{'/admin/edit/' + ${listChallenge.id}}">Edit</a>
-                <a th:href="@{'/admin/delete/' + ${listChallenge.id}}">Delete</a>
+                <a th:href="@{'/admin/edit/' + ${listChallenge.id}}">
+                    <input type="button" value="Update" />
+                </a>
+
+
+            </td>
+            <td>
+
+                <a th:href="@{'/admin/delete/' + ${listChallenge.id}}">
+                <input type="button" value="Delete"/>
+                </a>
+
             </td>
         </tr>
         </tbody>

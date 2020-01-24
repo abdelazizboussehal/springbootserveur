@@ -12,7 +12,7 @@
         <property name="path" type="string">
             <column name="path" />
         </property>
-        <property name="createDate" type="date">
+        <property name="createDate" type="string">
             <column name="createDate" />
         </property>
 

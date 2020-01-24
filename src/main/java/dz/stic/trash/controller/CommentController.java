@@ -9,6 +9,8 @@ import dz.stic.trash.model.Comments;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @RestController
@@ -75,6 +77,8 @@ public class CommentController {
         Gson gson = new Gson();
         Challenge challenge = gson.fromJson(schallenge, Challenge.class);
         Comments comments = gson.fromJson(sComment, Comments.class);
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        comments.setCreationDate(dtf.format(LocalDateTime.now()));
         //challenge.getrComments().iterator().next().setId(1);
         challenge.addComment(comments);
         challengeDAO.update(challenge);

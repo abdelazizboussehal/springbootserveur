@@ -9,7 +9,7 @@
 <div align="center">
     <h1>Enter New Sale</h1>
     <br />
-    <form action="#" th:action="@{/admin/AllChallenge}" th:object="${challenge}"
+    <form method="POST" action="#" th:action="@{/admin/new}" th:object="${challenge}"
           >
 
         <table border="0" cellpadding="10">
@@ -18,27 +18,31 @@
                 <td><input type="number" th:field="*{id}" readonly="readonly" /></td>
             </tr>
             <tr>
-                <td>Item Name:</td>
+                <td>State:</td>
+                <td><input type="number" th:field="*{state}" /></td>
+            </tr>
+            <tr>
+                <td>Creation Date:</td>
                 <td><input type="text" th:field="*{createdDate}" /></td>
             </tr>
             <tr>
-                <td>Quantity:</td>
+                <td>Starting Date:</td>
                 <td><input type="text" th:field="*{startingDate}" /></td>
             </tr>
             <tr>
-                <td>Amount (USD):</td>
+                <td>Ending Date:</td>
                 <td><input type="text" th:field="*{endingDate}" /></td>
             </tr>
             <tr>
-                <td>Raouf:</td>
+                <td>Street:</td>
                 <td><input type="text" th:field="*{address.street}" /></td>
             </tr>
             <tr>
-                <td>Raouf:</td>
+                <td>City:</td>
                 <td><input type="text" th:field="*{address.city}" /></td>
             </tr>
             <tr>
-                <td>Raouf:</td>
+                <td>Country:</td>
                 <td><input type="text" th:field="*{address.country}" /></td>
             </tr>
             <tr>

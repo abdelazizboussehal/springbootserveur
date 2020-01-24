@@ -6,9 +6,9 @@ import java.util.Objects;
 public abstract class User {
     protected int id;
     protected String lastname,fisrtName,userName,password;
-    protected Date birthDate;
+    protected String birthDate;
     public User(){};
-    public User(int id, String lastname, String fisrtName, String userName, String password, Date birthDate) {
+    public User(int id, String lastname, String fisrtName, String userName, String password, String birthDate) {
         this.id = id;
         this.lastname = lastname;
         this.fisrtName = fisrtName;
@@ -57,11 +57,11 @@ public abstract class User {
         this.password = password;
     }
 
-    public Date getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 

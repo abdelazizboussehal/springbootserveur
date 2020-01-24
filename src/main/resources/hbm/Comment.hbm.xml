@@ -12,7 +12,7 @@
         <property name="content" type="string">
             <column name="content" />
         </property>
-        <property name="creationDate" type="date" >
+        <property name="creationDate" type="string" >
             <column name="creationDate"  />
         </property>
         <property name="isEnabled" type="integer">

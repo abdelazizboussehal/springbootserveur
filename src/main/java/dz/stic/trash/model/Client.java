@@ -14,7 +14,7 @@ public class Client extends User {
     public Client() {
     }
 
-    public Client(int id, String lastname, String fisrtName, String userName, String password, Date birthDate, String phoneNumber, String androidVersion) {
+    public Client(int id, String lastname, String fisrtName, String userName, String password, String birthDate, String phoneNumber, String androidVersion) {
         super(id, lastname, fisrtName, userName, password, birthDate);
         this.phoneNumber = phoneNumber;
         this.androidVersion = androidVersion;

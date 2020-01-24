@@ -6,14 +6,14 @@ import java.util.Objects;
 public class Photo {
     private int id;
     private String path;
-    private Date createDate;
-    public Photo(int id, String path, Date createDate) {
+    private String createDate;
+    public Photo(int id, String path, String createDate) {
         this.id = id;
         this.path = path;
         this.createDate = createDate;
     }
 
-    public Photo(String path, Date createDate) {
+    public Photo(String path, String createDate) {
         this.path = path;
         this.createDate = createDate;
     }
@@ -37,11 +37,11 @@ public class Photo {
         this.path = path;
     }
 
-    public Date getCreateDate() {
+    public String getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(Date createDate) {
+    public void setCreateDate(String createDate) {
         this.createDate = createDate;
     }
 

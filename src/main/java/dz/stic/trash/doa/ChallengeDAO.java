@@ -5,8 +5,11 @@ import dz.stic.trash.model.Challenge;
 import dz.stic.trash.model.Client;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public class ChallengeDAO extends BaseDAO<Challenge> {
@@ -30,5 +33,15 @@ public class ChallengeDAO extends BaseDAO<Challenge> {
         return currentSession;
     }
 
+
+    public List<Challenge> myChallenge(int id) {
+        openCurrentSessionwithTransaction();
+        Query query=currentSession.createSQLQuery("SELECT * FROM Challenge where  id_user= ?").addEntity(Challenge.class);
+        query.setInteger(1,id);
+        List<Challenge> challenges=query.list();
+        closeCurrentSessionwithTransaction();
+        currentSession.clear();
+        return challenges;
+    }
 
 }
