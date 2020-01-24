@@ -3,7 +3,7 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="dz.stic.trash.model.Comment" table="commentt">
+    <class name="dz.stic.trash.model.Comments" table="comments">
         <id name="id" type="integer" column="ID">
             <generator class="sequence-identity">
                 <param name="sequence">seqCommentt</param>
@@ -19,7 +19,7 @@
             <column name="isEnabled" />
         </property>
 
-        <many-to-one name="rClient" column="id_client" not-null="true" />
+        <many-to-one name="rClient" column="id_client" not-null="false"  lazy="false" fetch="join"/>
 
     </class>
 </hibernate-mapping>

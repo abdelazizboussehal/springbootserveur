@@ -1,11 +1,14 @@
 package dz.stic.trash.controller;
 
+import com.google.gson.Gson;
 import dz.stic.trash.doa.ChallengeDAO;
 import dz.stic.trash.doa.ClientDAO;
 import dz.stic.trash.model.Challenge;
 import dz.stic.trash.model.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -29,14 +32,20 @@ public class ClientController {
         clientDAO.update(client);
         return clientDAO.findById(id);
     }
-    @RequestMapping(value = "/",method = RequestMethod.POST, consumes="application/json")
-    public Client creeClient(@RequestBody Client client){
+    @PostMapping("/")
+    public Client creeChallengePhoto(@RequestParam("client") String sclient,
+                                      RedirectAttributes redirectAttributes) {
+        //challengeDAO.persist(challenge);
+        Gson gson=new Gson();
+        Client client=gson.fromJson(sclient, Client.class);
+
         clientDAO.persist(client);
         return  client;
     }
     @GetMapping("/")
     public List<Client> getAll() {
-        return clientDAO.findAll();
+        List<Client> clients=clientDAO.findAll();
+        return clients;
 
     }
     @DeleteMapping("/")

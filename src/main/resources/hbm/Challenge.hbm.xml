@@ -10,48 +10,50 @@
             </generator>
         </id>
         <property name="createdDate" type="string">
-            <column name="createdDate" />
+            <column name="createdDate"/>
         </property>
         <property name="state" type="integer">
-            <column name="state" />
+            <column name="state"/>
         </property>
         <property name="startingDate" type="string">
-            <column name="startingDate" />
+            <column name="startingDate"/>
         </property>
         <property name="endingDate" type="string">
-            <column name="endingDate" />
+            <column name="endingDate"/>
         </property>
 
-        <component name="address" class="dz.stic.trash.model.Address" insert="true" update="true" >
+        <component name="address" class="dz.stic.trash.model.Address" insert="true" update="true">
             <property name="latitude" type="double">
-                <column name="latitude" />
+                <column name="latitude"/>
             </property>
             <property name="longitude" type="double">
-                <column name="longitude" />
+                <column name="longitude"/>
             </property>
             <property name="street" type="string">
-                <column name="street" />
+                <column name="street"/>
             </property>
             <property name="city" type="string">
-                <column name="city" />
+                <column name="city"/>
             </property>
             <property name="zipCode" type="string">
-                <column name="zipCode" />
+                <column name="zipCode"/>
             </property>
             <property name="country" type="string">
-                <column name="country" />
+                <column name="country"/>
             </property>
         </component>
 
 
-        <set name="rComment" cascade="all" lazy="false" fetch="select" >
-            <key column="id_challenge"/>
-            <one-to-many class="dz.stic.trash.model.Comment" />
+        <set name="rComments" cascade="all" lazy="false" fetch="select">
+            <key column="id_challenge" />
+            <one-to-many class="dz.stic.trash.model.Comments"/>
         </set>
-        <set name="rPhoto" cascade="all"  lazy="false" fetch="select" >
+        <set name="rPhoto" cascade="all" lazy="false" fetch="select">
             <key column="id_challenge"/>
-            <one-to-many class="dz.stic.trash.model.Photo" />
+            <one-to-many class="dz.stic.trash.model.Photo"/>
         </set>
+        <many-to-one name="rClient" column="id_user" not-null="true"  lazy="false" fetch="select"/>
+
         <!--
         <set name="rNote" cascade="all" >
             <key column="id_challenge"/>
@@ -61,7 +63,9 @@
             <key column="id_challenge"/>
             <many-to-many column="id_user" class="dz.stic.trash.model.Client" />
         </set>
+
 -->
 
     </class>
+
 </hibernate-mapping>

@@ -1,7 +1,6 @@
 package dz.stic.trash.doa;
 
 
-import dz.stic.trash.model.Comment;
 import dz.stic.trash.model.Note;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

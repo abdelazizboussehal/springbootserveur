@@ -44,6 +44,8 @@ public class ClientDAO extends BaseDAO<Client> {
         query.setString(1,client.getUserName());
         query.setString(2,client.getPassword());
         List<Client> clients=query.list();
+        closeCurrentSessionwithTransaction();
+        currentSession.clear();
         return clients;
     }
 

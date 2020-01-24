@@ -1,8 +1,6 @@
 package dz.stic.trash.controller;
 
-import dz.stic.trash.doa.CommentDAO;
 import dz.stic.trash.doa.NoteDAO;
-import dz.stic.trash.model.Comment;
 import dz.stic.trash.model.Note;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

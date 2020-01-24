@@ -4,7 +4,6 @@ import dz.stic.trash.doa.AdministratorDAO;
 import dz.stic.trash.doa.ChallengeDAO;
 import dz.stic.trash.model.Administrator;
 import dz.stic.trash.model.Challenge;
-import dz.stic.trash.model.Comment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,22 +1,21 @@
 package dz.stic.trash.doa;
 
 
-import dz.stic.trash.model.Challenge;
-import dz.stic.trash.model.Comment;
+import dz.stic.trash.model.Comments;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class CommentDAO extends BaseDAO<Comment> {
+public class CommentDAO extends BaseDAO<Comments> {
 
     @Autowired
     SessionFactory sessionFactory;
 
 
     public CommentDAO() {
-        super(Comment.class, "Commentt");
+        super(Comments.class, "Comments");
     }
 
     public Session openCurrentSession() {

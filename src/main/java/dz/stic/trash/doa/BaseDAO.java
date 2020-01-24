@@ -31,7 +31,7 @@ public abstract class BaseDAO<T> {
 
     public final void closeCurrentSessionwithTransaction() {
         currentTransaction.commit();
-        currentSession.close();
+        //currentSession.close();
     }
 
 
@@ -74,6 +74,7 @@ public abstract class BaseDAO<T> {
         openCurrentSession();
         T record = (T) getCurrentSession().get(tClass, id);
         closeCurrentSession();
+
         return record;
     }
 

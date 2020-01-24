@@ -3,23 +3,28 @@ package dz.stic.trash.model;
 import java.util.Date;
 import java.util.Objects;
 
-public class Comment {
+public class Comments {
 private int id;
 private String content;
 private Date creationDate ;
 private int isEnabled;
-    public Comment() {
+    private Client rClient;
+    public Comments() {
     }
 
-    public Comment(String content, Date creationDate, int isEnabled) {
+    public Comments(String content, Date creationDate, int isEnabled) {
         this.id = id;
         this.content = content;
         this.creationDate = creationDate;
         this.isEnabled = isEnabled;
     }
 
-    public Comment(int id) {
+    public Comments(int id) {
         this.id = id;
+    }
+
+    public Comments(String content) {
+        this.content=content;
     }
 
     public int getIsEnabled() {
@@ -30,7 +35,7 @@ private int isEnabled;
         this.isEnabled = isEnabled;
     }
 
-    private Client rClient;
+
 
 
     public int getId() {
@@ -76,8 +81,8 @@ private int isEnabled;
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Comment comment = (Comment) o;
-        return id == comment.id;
+        Comments comments = (Comments) o;
+        return id == comments.id;
     }
 
     @Override

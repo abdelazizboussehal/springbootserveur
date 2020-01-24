@@ -1,11 +1,14 @@
 package dz.stic.trash.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
 public class Client extends User {
     private String phoneNumber,androidVersion;
+    @JsonBackReference
     private Set<Challenge> rChallenge;
 
     public Client() {
@@ -16,6 +19,10 @@ public class Client extends User {
         this.phoneNumber = phoneNumber;
         this.androidVersion = androidVersion;
         this.rChallenge =new HashSet<>();
+    }
+
+    public Client(int i) {
+        id=i;
     }
 
     public String getPhoneNumber() {
@@ -57,4 +64,11 @@ public class Client extends User {
         this.rChallenge = rChallenge;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Client client = (Client) o;
+        return id == client.id;
+    }
 }
